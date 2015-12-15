@@ -5,6 +5,7 @@ HWSRC =	hwconf/hw_40.c \
 	hwconf/hw_48.c \
 	hwconf/hw_49.c \
 	hwconf/hw_410.c \
-	hwconf/hw_victor_r1a.c
+	hwconf/hw_victor_r1a.c \
+	hwconf/hw_jpa.c
 
 HWINC = hwconf
