@@ -45,7 +45,7 @@
  * 7:	IN11	ADC_EXT2 (buttons)
  * 8:	IN12	AN_IN
  *
- * 9:	IN4		--
+ * 9:	IN3		--
  * 10:	IN13    ADC_EXT
  * 11:	IN10 	TEMP_MOTOR
  */
