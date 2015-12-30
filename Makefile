@@ -5,7 +5,7 @@
 
 # Compiler options here.
 ifeq ($(USE_OPT),)
-  USE_OPT = -O2 -ggdb -fomit-frame-pointer -falign-functions=16 -std=gnu99
+  USE_OPT = -O2 -g3 -ggdb -fomit-frame-pointer -falign-functions=16 -std=gnu99
   USE_OPT += -DBOARD_OTG_NOVBUSSENS $(build_args)
   USE_OPT += -fsingle-precision-constant -Wdouble-promotion
 endif
@@ -270,7 +270,7 @@ build/$(PROJECT).bin: build/$(PROJECT).elf
 # Program
 upload: build/$(PROJECT).bin
 	#qstlink2 --cli --erase --write build/$(PROJECT).bin
-	openocd -f interface/stlink-v1.cfg -c "set WORKAREASIZE 0x2000" -f target/stm32f4x_stlink.cfg -c "program build/$(PROJECT).elf verify reset"
+	openocd -f interface/stlink-v2.cfg -c "set WORKAREASIZE 0x2000" -f target/stm32f4x_stlink.cfg -c "program build/$(PROJECT).elf verify reset"
 	#openocd -f board/stm32f4discovery.cfg -c "reset_config trst_only combined" -c "program build/$(PROJECT).elf verify reset exit" # For openocd 0.9
 
 #program with olimex arm-usb-tiny-h and jtag-swd adapter board. needs openocd>=0.9
